@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Birthday Clue Game&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f9f9f9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#game {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#message {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: calc(100% - 22px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ccc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #007aff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button:focus {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hidden {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hidden-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #f9f9f9; /* Very light grey */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>iframe {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="game"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="message"&gt;Happy Birthday, Alfie! Solve the clues to discover your present!&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="clue1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;Clue 1: I accompany you wherever you go, but I'm not your friend. I have a tongue but cannot speak. What am I?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="answer1" placeholder="Type your answer here"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="checkAnswer1()"&gt;Submit&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="clue2" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;Clue 2: Decode the message to find your next hint: 'Uifsf't b tfdsfu dpef!'&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="answer2" placeholder="Type the decoded message here"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="checkAnswer2()"&gt;Submit&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="clue3" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;There's a secret code! Scan the QR code below to find it.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&amp;data=https://www.example.com/secret-hint" alt="QR Code"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="answer3" placeholder="Type the secret code here"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="checkAnswer3()"&gt;Submit&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="clue4" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;Sometimes things are not as they seem. Look at it differently. &lt;br&gt;&lt;br&gt; Imagine if we were to tease a new product at Destructive. How would Rob have suggested we do this?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hidden-text" style="font-size: 48px; font-weight: bold;"&gt;ZARA&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="answer4" placeholder="Type the hidden word here"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="checkAnswer4()"&gt;Submit&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="final" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;Congratulations! You've solved all the clues.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;Happy Birthday!&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;iframe src="https://www.zara.com/uk/en/retro-multi-piece-sneakers-p12220320.html?v1=344746540&amp;utm_campaign=productShare&amp;utm_medium=mobile_sharing_iOS&amp;utm_source=red_social_movil" title="Retro Multi-Piece Sneakers 3D View"&gt;&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function checkAnswer1() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const answer1 = document.getElementById('answer1').value.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const message = document.getElementById('message');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const clue1 = document.getElementById('clue1');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const clue2 = document.getElementById('clue2');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (answer1 === 'shoes' || answer1 === 'sneakers' || answer1 === 'trainers') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>message.innerText = 'Great job! On to the next clue.';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>clue1.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>clue2.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('answer1').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>message.innerText = 'Incorrect answer, try again!';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function checkAnswer2() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const answer2 = document.getElementById('answer2').value.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const message = document.getElementById('message');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const clue2 = document.getElementById('clue2');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const clue3 = document.getElementById('clue3');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (answer2 === "there's a secret code") {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>message.innerText = 'Great job! On to the next clue.';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>clue2.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>clue3.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('answer2').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>message.innerText = 'Incorrect answer, try again!';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function checkAnswer3() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const answer3 = document.getElementById('answer3').value.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const message = document.getElementById('message');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const clue3 = document.getElementById('clue3');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const clue4 = document.getElementById('clue4');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (answer3 === 'zara') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>message.innerText = 'Great job! On to the final clue.';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>clue3.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>clue4.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('answer3').value = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>message.innerText = 'Incorrect answer, try again!';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function checkAnswer4() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const answer4 = document.getElementById('answer4').value.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const message = document.getElementById('message');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const clue4 = document.getElementById('clue4');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const final = document.getElementById('final');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (answer4 === 'zara') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>message.innerText = 'Congratulations! You\'ve solved all the clues.';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>clue4.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>final.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>message.innerText = 'Incorrect answer, try again!';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
