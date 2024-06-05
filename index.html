@@ -11,12 +11,13 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #111; /* Dark background */
+            background-color: #000; /* Dark background */
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
             flex-direction: column;
             color: #fff; /* Light text color */
+            position: relative;
         }
         #game {
             background-color: #111; /* Slightly lighter dark background */
@@ -73,8 +74,12 @@
             display: none;
         }
         .hidden-text {
-            color: #1a1a1a; /* Black to blend with the dark background */
-            margin-bottom: 10px; /* Adjust position above the question */
+            color: #1a1a1a; /* Very dark grey to blend with the slightly lighter dark background */
+            position: absolute;
+            top: 10px; /* Adjust as needed */
+            right: 10px; /* Adjust as needed */
+            font-size: 48px;
+            font-weight: bold;
         }
         .countdown {
             font-size: 2em;
@@ -91,8 +96,8 @@
     </style>
 </head>
 <body>
+    <div class="hidden-text">ZARA</div> <!-- Place it outside the game box -->
     <div id="game">
-        <div class="hidden-text" style="font-size: 48px; font-weight: bold;">ZARA</div>
         <div id="message">Happy Birthday, Alfie! Solve the clues to discover your present!</div>
         <div id="clue1">
             <div>Clue 1: Sometimes things are not as they seem. How would Rob look at things differently?</div>
