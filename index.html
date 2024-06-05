@@ -79,17 +79,17 @@
             position: absolute;
             top: 10px; /* Adjust as needed */
             right: 10px; /* Adjust as needed */
-            font-size: 16px;
+            font-size: 16px; /* Size 16 font */
             font-weight: bold;
         }
         .countdown {
             font-size: 2em;
             font-weight: bold;
+            text-align: center;
         }
-        iframe {
+        video {
             width: 100%;
-            height: 400px;
-            border: none;
+            height: auto;
             border-radius: 12px;
             margin-top: 20px;
             transition: all 0.5s ease;
@@ -97,7 +97,7 @@
     </style>
 </head>
 <body>
-    <div class="hidden-text">ZARA</div> <!-- Place it outside the game box -->
+    <div class="hidden-text" id="hidden-text">ZARA</div> <!-- Place it outside the game box -->
     <div id="game">
         <div id="message">Happy Birthday, Alfie! Solve the clues to discover your present!</div>
         <div id="clue1">
@@ -121,21 +121,26 @@
         <div id="final" class="hidden">
             <div>Congratulations! You've solved all the clues.</div>
             <div>Happy Birthday!</div>
-            <iframe src="https://www.zara.com/uk/en/retro-multi-piece-sneakers-p12220320.html?v1=344746540&utm_campaign=productShare&utm_medium=mobile_sharing_iOS&utm_source=red_social_movil" title="Retro Multi-Piece Sneakers 3D View"></iframe>
+            <video autoplay loop muted playsinline>
+                <source src="https://cdn.shopify.com/videos/c/o/v/9e43697c095b4b6186342ca96d69ef4f.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
     <script>
         function checkAnswer1() {
-            const answer1 = document.getElementById('answer1').value.toLowerCase();
+            const answer1 = document.getElementById('answer1').value.trim().toLowerCase();
             const message = document.getElementById('message');
             const clue1 = document.getElementById('clue1');
             const clue2 = document.getElementById('clue2');
+            const hiddenText = document.getElementById('hidden-text');
 
             if (answer1 === 'zara') {
                 message.innerText = 'Great job! On to the next clue.';
                 clue1.classList.add('hidden');
                 clue2.classList.remove('hidden');
+                hiddenText.classList.add('hidden');
                 document.getElementById('answer1').value = '';
             } else {
                 message.innerText = 'Incorrect answer, try again!';
@@ -143,7 +148,7 @@
         }
 
         function checkAnswer2() {
-            const answer2 = document.getElementById('answer2').value.toLowerCase();
+            const answer2 = document.getElementById('answer2').value.trim().toLowerCase();
             const message = document.getElementById('message');
             const clue2 = document.getElementById('clue2');
             const clue3 = document.getElementById('clue3');
@@ -159,7 +164,7 @@
         }
 
         function checkAnswer3() {
-            const answer3 = document.getElementById('answer3').value.toLowerCase();
+            const answer3 = document.getElementById('answer3').value.trim().toLowerCase();
             const message = document.getElementById('message');
             const clue3 = document.getElementById('clue3');
             const countdown = document.getElementById('countdown');
