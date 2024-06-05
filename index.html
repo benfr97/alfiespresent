@@ -11,23 +11,24 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0; /* Light grey background */
+            background-color: #000; /* Dark background */
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
             flex-direction: column;
-            color: #333; /* Dark text color */
+            color: #fff; /* Light text color */
         }
         #game {
-            background-color: #fff;
+            background-color: #111; /* Slightly lighter dark background */
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             max-width: 400px;
             width: 100%;
             box-sizing: border-box;
             transition: all 0.5s ease;
             transform: scale(1);
+            color: #fff;
         }
         #game.shrink {
             transform: scale(0.9);
@@ -43,11 +44,11 @@
             font-size: 16px;
             width: calc(100% - 22px);
             margin-bottom: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #555;
             border-radius: 8px;
             box-sizing: border-box;
-            background-color: #fff;
-            color: #333;
+            background-color: #222;
+            color: #fff;
             transition: all 0.5s ease;
         }
         button {
@@ -72,7 +73,8 @@
             display: none;
         }
         .hidden-text {
-            color: #f0f0f0; /* Light grey to blend with the light background */
+            color: #000; /* Black to blend with the dark background */
+            margin-bottom: 10px; /* Adjust position above the question */
         }
         .countdown {
             font-size: 2em;
@@ -90,10 +92,10 @@
 </head>
 <body>
     <div id="game">
+        <div class="hidden-text" style="font-size: 48px; font-weight: bold;">ZARA</div>
         <div id="message">Happy Birthday, Alfie! Solve the clues to discover your present!</div>
         <div id="clue1">
             <div>Clue 1: Sometimes things are not as they seem. How would Rob look at things differently?</div>
-            <div class="hidden-text" style="font-size: 48px; font-weight: bold;">ZARA</div>
             <input type="text" id="answer1" placeholder="Type the hidden word here">
             <button onclick="checkAnswer1()">Submit</button>
         </div>
